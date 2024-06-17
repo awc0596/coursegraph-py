@@ -26,8 +26,7 @@ class ShowTable:
         process_data: 데이터를 처리하고 테이블 생성
     """
     def __init__(self, image_mode, input_filepath, output_filename, width=None, height=None):
-        self.font_path = self.get_system_font()
-        self.filename = input_filepath
+        self.font_path = get_system_font()[0]['file']  # 외부 모듈의 함수를 직접 사용하여 폰트 경로 초기화 self.filename = input_filepath
         self.output_filename = output_filename
         self.image_mode = image_mode
         self.width = width or 20  # 기본 너비 설정
